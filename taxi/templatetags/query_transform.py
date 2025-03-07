@@ -11,4 +11,4 @@ def query_transform(request, **kwargs):
             update[ka] = ve
         else:
             update.pop(ka, 0)
-        return update.urlencode()
+    return update.urlencode()

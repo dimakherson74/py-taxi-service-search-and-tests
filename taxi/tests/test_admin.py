@@ -18,19 +18,11 @@ class AdminTests(TestCase):
         )
 
     def test_driver_license_number(self):
-        """
-        test that author's pseudonym is in list display on author admin page
-        :return:
-        """
         url = reverse("admin:taxi_driver_changelist")
         res = self.client.get(url)
         self.assertContains(res, self.driver.license_number)
 
     def test_author_detail_pseudonym_lister(self):
-        """
-        test that author's pseudonym is on author detail admin page
-        :return:
-        """
         url = reverse("admin:taxi_driver_change", args=[self.driver.pk])
         res = self.client.get(url)
         self.assertContains(res, self.driver.license_number)
